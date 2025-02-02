@@ -1,3 +1,0 @@
-[submodule "PasshraseGenerator"]
-	path = PasshraseGenerator
-	url = git@github.com:NicolaasWeideman/PasshraseGenerator.git
