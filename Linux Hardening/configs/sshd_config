@@ -1,0 +1,53 @@
+# Package generated configuration file
+# See the sshd_config(5) manpage for details
+
+Port 22
+Protocol 2
+
+# HostKeys for protocol version 2
+#HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Logging
+SyslogFacility AUTH
+LogLevel VERBOSE
+
+# Authentication settings
+LoginGraceTime 2m
+PermitRootLogin yes
+StrictModes yes
+MaxAuthTries 3
+PubkeyAuthentication yes
+
+IgnoreRhosts yes
+HostbasedAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+PasswordAuthentication yes
+PermitUserEnvironment no
+KerberosAuthentication no
+GSSAPIAuthentication no
+X11Forwarding no
+AllowAgentForwarding no
+AllowTcpForwarding no
+
+
+ClientAliveInterval 180
+ClientAliveCountMax 0
+TCPKeepAlive yes
+MaxSessions 2
+X11UseLocalhost yes
+
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
+
+# Subsystem for SFTP
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# ChrootDirectory (optional, uncomment if needed)
+# ChrootDirectory /home/%u
+
+# Banner (optional, uncomment if needed)
+# Banner /etc/issue.net
+AcceptEnv LANG LC_*
